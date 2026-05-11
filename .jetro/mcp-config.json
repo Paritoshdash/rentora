@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "jetro": {
+      "command": "C:\\Users\\HP\\.jetro\\runtime\\node-win32-x64.exe",
+      "args": [
+        "C:\\Users\\HP\\.jetro\\mcp-server\\index.js"
+      ],
+      "env": {
+        "JET_WORKSPACE": "e:\\Headphone\\Tilak\\rentora",
+        "JET_API_URL": "https://api.jetro.ai",
+        "PATH": "C:\\Users\\HP\\.jetro\\runtime;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Git\\cmd;C:\\Program Files\\Java\\jdk-25\\bin;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;;C:\\Program Files\\Git LFS;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\HP\\.local\\bin;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\;C:\\Users\\HP\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;E:\\Qoder\\bin;D:\\Programming\\Qoder\\bin;C:\\Users\\HP\\AppData\\Roaming\\npm;C:\\Users\\HP\\AppData\\Local\\Programs\\Windsurf\\bin;C:\\Users\\HP\\AppData\\Local\\spicetify;C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin;C:\\Users\\HP\\AppData\\Local\\Programs\\Ollama;D:\\Kiro\\bin;D:\\Antigravity\\bin"
+      }
+    }
+  }
+}
