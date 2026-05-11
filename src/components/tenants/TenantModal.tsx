@@ -110,12 +110,12 @@ export default function TenantModal({ tenant, properties, onClose, onSaved }: Pr
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <Label>Monthly Rent (₹) *</Label>
-                  <Input type="number" min={0} placeholder="e.g. 18000" {...register('rent_amount')} />
+                  <Input type="number" min={0} placeholder="e.g. 18000" {...register('rent_amount', { valueAsNumber: true })} />
                   {errors.rent_amount && <p className="text-xs text-red-500">{errors.rent_amount.message}</p>}
                 </div>
                 <div className="space-y-1.5">
                   <Label>Security Deposit (₹) *</Label>
-                  <Input type="number" min={0} placeholder="e.g. 36000" {...register('deposit')} />
+                  <Input type="number" min={0} placeholder="e.g. 36000" {...register('deposit', { valueAsNumber: true })} />
                   {errors.deposit && <p className="text-xs text-red-500">{errors.deposit.message}</p>}
                 </div>
               </div>

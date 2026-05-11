@@ -75,7 +75,7 @@ export default function ExpenseModal({ expense, properties, onClose, onSaved }: 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1.5">
               <Label>Amount (₹) *</Label>
-              <Input type="number" min={0} placeholder="e.g. 5000" {...register('amount')} />
+              <Input type="number" min={0} placeholder="e.g. 5000" {...register('amount', { valueAsNumber: true })} />
               {errors.amount && <p className="text-xs text-red-500">{errors.amount.message}</p>}
             </div>
             <div className="space-y-1.5">

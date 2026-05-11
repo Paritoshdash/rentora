@@ -31,7 +31,7 @@ export default function OccupancyChart({ occupied, vacant }: Props) {
                 <Pie data={data} cx="50%" cy="50%" innerRadius={42} outerRadius={58} paddingAngle={3} dataKey="value" startAngle={90} endAngle={-270}>
                   {data.map((entry, i) => <Cell key={i} fill={entry.color} strokeWidth={0} />)}
                 </Pie>
-                <Tooltip formatter={(v: number) => [`${v} units`, '']} />
+                <Tooltip formatter={(v) => [`${v} units`, '']} />
               </PieChart>
             </ResponsiveContainer>
             <div className="absolute inset-0 flex items-center justify-center">

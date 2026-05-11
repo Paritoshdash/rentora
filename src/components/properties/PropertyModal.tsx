@@ -79,14 +79,14 @@ export default function PropertyModal({ property, onClose, onSaved }: Props) {
             </div>
             <div className="space-y-1.5">
               <Label>Number of Units *</Label>
-              <Input type="number" min={1} placeholder="e.g. 8" {...register('units')} />
+              <Input type="number" min={1} placeholder="e.g. 8" {...register('units', { valueAsNumber: true })} />
               {errors.units && <p className="text-xs text-red-500">{errors.units.message}</p>}
             </div>
           </div>
 
           <div className="space-y-1.5">
             <Label>Monthly Rent per Unit (₹) *</Label>
-            <Input type="number" min={0} placeholder="e.g. 18000" {...register('monthly_rent')} />
+            <Input type="number" min={0} placeholder="e.g. 18000" {...register('monthly_rent', { valueAsNumber: true })} />
             {errors.monthly_rent && <p className="text-xs text-red-500">{errors.monthly_rent.message}</p>}
           </div>
 

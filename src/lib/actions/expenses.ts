@@ -32,7 +32,7 @@ export async function createExpense(formData: unknown) {
   if (!user) return { error: 'Unauthorized' }
 
   const parsed = expenseSchema.safeParse(formData)
-  if (!parsed.success) return { error: parsed.error.errors[0].message }
+  if (!parsed.success) return { error: parsed.error.issues[0].message }
 
   // Get property name
   const { data: prop } = await supabase
@@ -71,7 +71,7 @@ export async function updateExpense(id: string, formData: unknown) {
   if (!user) return { error: 'Unauthorized' }
 
   const parsed = expenseSchema.safeParse(formData)
-  if (!parsed.success) return { error: parsed.error.errors[0].message }
+  if (!parsed.success) return { error: parsed.error.issues[0].message }
 
   const { data: prop } = await supabase
     .from('properties')
@@ -111,3 +111,4 @@ export async function deleteExpense(id: string) {
   revalidatePath('/dashboard')
   return { success: true }
 }
+

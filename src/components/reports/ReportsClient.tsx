@@ -87,7 +87,7 @@ export default function ReportsClient({ stats, chartData, payments, expenses }: 
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                 <XAxis dataKey="month" tick={{ fontSize: 12, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} tickFormatter={v => `₹${(v / 1000).toFixed(0)}k`} />
-                <Tooltip formatter={(v: number) => [`₹${v.toLocaleString('en-IN')}`, '']} contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '12px' }} />
+                <Tooltip formatter={(v) => [`₹${Number(v).toLocaleString('en-IN')}`, '']} contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '12px' }} />
                 <Bar dataKey="income" fill="#3b82f6" radius={[4, 4, 0, 0]} name="Income" />
                 <Bar dataKey="expenses" fill="#f87171" radius={[4, 4, 0, 0]} name="Expenses" />
               </BarChart>
@@ -107,7 +107,7 @@ export default function ReportsClient({ stats, chartData, payments, expenses }: 
                   <Pie data={expenseByCategory} cx="50%" cy="50%" innerRadius={50} outerRadius={80} paddingAngle={3} dataKey="value">
                     {expenseByCategory.map((entry, i) => <Cell key={i} fill={entry.color} strokeWidth={0} />)}
                   </Pie>
-                  <Tooltip formatter={(v: number) => [`₹${v.toLocaleString('en-IN')}`, '']} />
+                  <Tooltip formatter={(v) => [`₹${Number(v).toLocaleString('en-IN')}`, '']} />
                 </PieChart>
               </ResponsiveContainer>
               <div className="flex-1 space-y-2.5">

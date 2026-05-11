@@ -45,7 +45,7 @@ export async function createProperty(formData: unknown) {
   if (!user) return { error: 'Unauthorized' }
 
   const parsed = propertySchema.safeParse(formData)
-  if (!parsed.success) return { error: parsed.error.errors[0].message }
+  if (!parsed.success) return { error: parsed.error.issues[0].message }
 
   const { data, error } = await supabase
     .from('properties')
@@ -67,7 +67,7 @@ export async function updateProperty(id: string, formData: unknown) {
   if (!user) return { error: 'Unauthorized' }
 
   const parsed = propertySchema.safeParse(formData)
-  if (!parsed.success) return { error: parsed.error.errors[0].message }
+  if (!parsed.success) return { error: parsed.error.issues[0].message }
 
   const { data, error } = await supabase
     .from('properties')
@@ -127,3 +127,4 @@ export async function updatePropertyImage(id: string, imageUrl: string) {
 async function logActivity(supabase: any, userId: string, action: string, detail: string, type: string) {
   await supabase.from('activity_logs').insert({ user_id: userId, action, detail, type })
 }
+

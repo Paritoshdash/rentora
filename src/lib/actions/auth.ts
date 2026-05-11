@@ -108,3 +108,4 @@ export async function updatePassword(password: string) {
   if (error) return { error: error.message }
   return { success: true }
 }
+

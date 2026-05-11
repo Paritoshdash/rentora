@@ -52,7 +52,7 @@ export async function createTenant(formData: unknown) {
   if (!user) return { error: 'Unauthorized' }
 
   const parsed = tenantSchema.safeParse(formData)
-  if (!parsed.success) return { error: parsed.error.errors[0].message }
+  if (!parsed.success) return { error: parsed.error.issues[0].message }
 
   const { data, error } = await supabase
     .from('tenants')
@@ -116,7 +116,7 @@ export async function updateTenant(id: string, formData: unknown) {
   if (!user) return { error: 'Unauthorized' }
 
   const parsed = tenantSchema.safeParse(formData)
-  if (!parsed.success) return { error: parsed.error.errors[0].message }
+  if (!parsed.success) return { error: parsed.error.issues[0].message }
 
   const { data, error } = await supabase
     .from('tenants')
@@ -176,3 +176,4 @@ export async function deleteTenant(id: string) {
   revalidatePath('/dashboard')
   return { success: true }
 }
+

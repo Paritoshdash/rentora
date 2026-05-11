@@ -190,3 +190,4 @@ export async function syncOverduePayments() {
   revalidatePath('/dashboard/rent')
   revalidatePath('/dashboard/notifications')
 }
+
